@@ -15,22 +15,40 @@
         <p>Precio base: $<span class="precio-inicial"></span></p>
         <p>
           Cantidad:
-          <span class="cantidad">0</span>
-          <button id="mas" onclick="
-          mas = document.querySelector('.cantidad')
-          aument = parseInt(mas.innerHTML)
-          aument = aument + 1
-          mas.innerHTML = aument">+</button>
-          <button id="menos" onclick="
+          <span class="cantidad" id="cantidad">0</span>
+          <button
+            id="mas"
+            onclick="
+        mas = document.querySelector('.cantidad')
+        total = document.querySelector('.valor-total')
+        precioSpan = document.querySelector('.precio-inicial')
+        precio = +precioSpan.innerHTML
+        aument = parseInt(mas.innerHTML)
+        aument = aument + 1
+        mas.innerHTML = aument
+        total.innerHTML = aument * precio"
+          >
+            +
+          </button>
+          <button
+            id="menos"
+            onclick="
           menos = document.querySelector('.cantidad')
+          total = document.querySelector('.valor-total')
+        precioSpan = document.querySelector('.precio-inicial')
+        precio = +precioSpan.innerHTML
           dismi = parseInt(menos.innerHTML)
           dismi = dismi - 1
-          menos.innerHTML = dismi">-</button>
+          menos.innerHTML = dismi
+          total.innerHTML = dismi * precio"
+          >
+            -
+          </button>
         </p>
       </div>
     </section>
     <div class="total-section">
-      <p>Total a pagar: $<span class="valor-total"></span></p>
+      <p>Total a pagar: $<span class="valor-total">0</span></p>
     </div>
     <script src="./assets/js/script.js"></script>
   </body>
